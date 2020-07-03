@@ -5,7 +5,6 @@ import com.asset.library.services.interfaces.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import static com.asset.library.constant.Errors.INVALID_KEY;
@@ -19,16 +18,16 @@ public class ImageServiceImpl implements ImageService {
     private Map<String, ImageResponse> imageMap;
 
     @Override
-    public ImageResponse getImageByKey(String key, Long timestamp) {
+    public ImageResponse getImageByKey(String key, Long updatedOn) {
         if (isStringOnlyAlphabet(key)) {
             ImageResponse imageResponse = imageMap.get(key);
 
             if (imageResponse == null)
                 throw new IllegalArgumentException(KEY_NOT_AVAILABLE);
 
-            if (timestamp == null || timestamp == 0)
+            if (updatedOn == null || updatedOn == 0)
                 return imageResponse;
-            else if (imageResponse.getTime() > timestamp)
+            else if (imageResponse.getUpdateOn() > updatedOn)
                 return imageResponse;
 
             return null;

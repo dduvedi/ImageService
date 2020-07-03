@@ -2,24 +2,24 @@ package com.asset.library.model;
 
 public class ImageResponse {
     private String key;
-    private String value;
-    private Long time;
+    private String url;
+    private Long updateOn;
 
-    public ImageResponse(String key, String value, Long time) {
+    public ImageResponse(String key, String url, Long updateOn) {
         this.key = key;
-        this.value = value;
-        this.time = time;
+        this.url = url;
+        this.updateOn = updateOn;
     }
 
     public String getKey() {
         return key;
     }
 
-    public String getValue() {
-        return value;
+    public String getUrl() {
+        return url;
     }
 
-    public Long getTime() {
-        return time;
+    public Long getUpdateOn() {
+        return updateOn;
     }
 }

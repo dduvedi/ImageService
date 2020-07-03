@@ -1,4 +1,4 @@
-package com.asset.library.constant;
+package com.asset.library.configuration;
 
 import com.asset.library.model.ImageResponse;
 import org.springframework.context.annotation.Bean;

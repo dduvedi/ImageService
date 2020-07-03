@@ -14,7 +14,7 @@ public class ImageController {
 
     @RequestMapping(value = "/{key}", method = RequestMethod.GET)
     public ImageResponse getImageByKey(@PathVariable("key") String key,
-                                       @RequestParam(name = "timestamp", required = false) Long timestamp) {
-        return imageService.getImageByKey(key, timestamp);
+                                       @RequestParam(name = "updatedOn", required = false) Long updatedOn) {
+        return imageService.getImageByKey(key, updatedOn);
     }
 }
