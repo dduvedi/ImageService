@@ -1,25 +1,24 @@
 package com.asset.library.model;
 
 public class ImageResponse {
-    private String key;
-    private String url;
-    private Long updateOn;
 
-    public ImageResponse(String key, String url, Long updateOn) {
-        this.key = key;
-        this.url = url;
-        this.updateOn = updateOn;
+    private Long lastSyncedOn;
+    private Object imageData;
+
+    public ImageResponse(Long lastSyncedOn, Object metaData) {
+        this.lastSyncedOn = lastSyncedOn;
+        this.imageData = metaData;
     }
 
-    public String getKey() {
-        return key;
+    public ImageResponse(ImageMetaData metaData) {
+        this.imageData = metaData;
     }
 
-    public String getUrl() {
-        return url;
+    public Long getLastSyncedOn() {
+        return lastSyncedOn;
     }
 
-    public Long getUpdateOn() {
-        return updateOn;
+    public Object getImageData() {
+        return imageData;
     }
 }

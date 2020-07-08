@@ -13,7 +13,7 @@ public class ImageController {
 
     @RequestMapping(value = "/image", method = RequestMethod.GET)
     public Object getImageByKey(@RequestParam(name = "key", required = false) String key,
-                                       @RequestParam(name = "updatedOn", required = false) Long updatedOn) {
-        return imageService.getImageByKey(key, updatedOn);
+                                       @RequestParam(name = "lastSyncedOn", required = false) Long lastSyncedOn) {
+        return imageService.getImageByKey(key, lastSyncedOn);
     }
 }
